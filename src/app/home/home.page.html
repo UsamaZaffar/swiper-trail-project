@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div id="container">
+        <swiper-container #swiper navigation="false" pagination="true" [pagination]="{ clickable: true }"
+          [autoplay]="{ delay: 1000, disableOnInteraction: false }" [loop]="true" [autoHeight]="true">
+          <swiper-slide *ngFor="let image of testImages">
+            <div class="swiper-slide-content">
+              <img class="swiperImage" src="{{image}}" alt="">
+              <div class="icons">
+                <img src="{{icon}}" (click)="changeImage(i)" *ngFor="let icon of iconPath; let i=index" class="icon"
+                  alt="Icon">
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="d-flex align-items-left flex-column text-section">
+        <p class="sub-heading">LOREM IPSUM</p>
+        <p class="main-heading">LOREM IPSUM</p>
+      </div>
+    </div>
+  </div>
+</div>
